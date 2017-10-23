@@ -1,0 +1,62 @@
+{
+    "title": "Personal rules(@todesking)",
+    "rules": [
+        {
+            <%
+              leader = 'd'
+              normal_keys = ('a'..'z').to_a + ('0'..'9').to_a + %w(
+                spacebar semicolon period comma slash backslash open_bracket close_bracket quote equal_sign hyphen
+              )
+            %>
+            "description": "<%= leader %>+v to click",
+            "manipulators": <%= JSON.generate([
+                { type: 'basic',
+                  from: _from(leader, [], []),
+                  to: [ { set_variable: {name: 'mouse_mode', value: 1 }} ],
+                  to_if_alone: _to([[leader]]),
+                  to_after_key_up: [ {set_variable: { name: 'mouse_mode', value: 0 }} ]
+                },
+                { type: 'basic',
+                  from: _from('v', [], []),
+                  to: [ { pointing_button: 'button1' } ],
+                  conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
+                },
+            ] + each_key(
+                source_keys_list: normal_keys,
+                dest_keys_list: normal_keys,
+                to_pre_events: [[leader]],
+                conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
+            )) %>
+        },
+        {
+            "description": "Change Left Option+h/j/k/l to Arrows",
+            "manipulators": <%= each_key(
+                source_keys_list: %w(h j k l),
+                dest_keys_list: %w(left_arrow down_arrow up_arrow right_arrow),
+                from_mandatory_modifiers: ['left_option'],
+                from_optional_modifiers: ['shift'],
+                as_json: true
+            ) %>
+        },
+        {
+            "description": "Option+u/i/o/p to PgDown/PgUp/Home/End",
+            "manipulators": <%= each_key(
+                source_keys_list: %w(u i o p),
+                dest_keys_list: %w(page_down page_up home end),
+                from_mandatory_modifiers: ['left_option'],
+                as_json: true
+            ) %>
+        },
+        {
+            "description": "Ctrl+m to Return",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from('m', ['left_control'], []) %>,
+                    "to": <%= to([['return_or_enter']]) %>
+                }
+            ]
+        }
+    ]
+}
+
