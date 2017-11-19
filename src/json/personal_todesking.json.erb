@@ -1,12 +1,14 @@
+<%
+normal_keys = ('a'..'z').to_a + ('0'..'9').to_a + %w(
+  spacebar semicolon period comma slash backslash open_bracket close_bracket quote equal_sign hyphen
+)
+%>
 {
     "title": "Personal rules(@todesking)",
     "rules": [
         {
             <%
               leader = 'd'
-              normal_keys = ('a'..'z').to_a + ('0'..'9').to_a + %w(
-                spacebar semicolon period comma slash backslash open_bracket close_bracket quote equal_sign hyphen
-              )
             %>
             "description": "<%= leader %>+v to click",
             "manipulators": <%= JSON.generate([
@@ -27,6 +29,28 @@
                 to_pre_events: [[leader]],
                 conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
             )) %>
+        },
+        {
+            "description": "Cmd+q * 2 to quit app",
+            "manipulators": <%= JSON.generate([
+                { type: 'basic',
+                  from: _from('q', ['left_command'], []),
+                  to: [ { set_variable: {name: 'cmd_q_ready', value: 1 }} ],
+                  conditions: [ {type: 'variable_if', name: 'cmd_q_ready', value: 0} ]
+                },
+                { type: 'basic',
+                  from: _from('q', ['left_command'], []),
+                  to: _to([['q', 'left_command']]) + [{set_variable: {name: 'cmd_q_ready', value: 0}}],
+                  conditions: [ {type: 'variable_if', name: 'cmd_q_ready', value: 1} ]
+                }
+            ] + normal_keys.map {|key|
+                { type: 'basic',
+                  from: _from(key, [], []),
+                  to: _to([[key]]) + [{set_variable: {name: 'cmd_q_ready', value: 0}}],
+                  conditions: [{type: 'variable_if', name: 'cmd_q_ready', value: 1}]
+                }
+            }
+            ) %>
         },
         {
             "description": "Change Left Option+h/j/k/l to Arrows",
