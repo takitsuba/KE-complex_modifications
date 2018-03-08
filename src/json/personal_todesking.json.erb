@@ -10,7 +10,7 @@ normal_keys = ('a'..'z').to_a + ('0'..'9').to_a + %w(
             <%
               leader = 'd'
             %>
-            "description": "<%= leader %>+v to click",
+            "description": "<%= leader %>+v to click, h/j/k/l to move cursor(Mouse Keys required)",
             "manipulators": <%= JSON.generate([
                 { type: 'basic',
                   from: _from(leader, [], []),
@@ -21,6 +21,26 @@ normal_keys = ('a'..'z').to_a + ('0'..'9').to_a + %w(
                 { type: 'basic',
                   from: _from('v', [], []),
                   to: [ { pointing_button: 'button1' } ],
+                  conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
+                },
+                { type: 'basic',
+                  from: _from('j', [], []),
+                  to: _to([['keypad_2']]),
+                  conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
+                },
+                { type: 'basic',
+                  from: _from('k', [], []),
+                  to: _to([['keypad_8']]),
+                  conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
+                },
+                { type: 'basic',
+                  from: _from('h', [], []),
+                  to: _to([['keypad_4']]),
+                  conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
+                },
+                { type: 'basic',
+                  from: _from('l', [], []),
+                  to: _to([['keypad_6']]),
                   conditions: [ {type: 'variable_if', name: 'mouse_mode', value: 1} ]
                 },
             ] + each_key(

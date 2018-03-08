@@ -2,7 +2,7 @@
   "title": "Personal rules(@todesking)",
   "rules": [
     {
-      "description": "d+v to click",
+      "description": "d+v to click, h/j/k/l to move cursor(Mouse Keys required)",
       "manipulators": [
         {
           "type": "basic",
@@ -39,6 +39,78 @@
           "to": [
             {
               "pointing_button": "button1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "keypad_2"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "keypad_8"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "keypad_4"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "keypad_6"
             }
           ],
           "conditions": [
@@ -1121,12 +1193,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "a",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "a"
           },
           "to": [
             {
@@ -1150,12 +1217,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "b",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "b"
           },
           "to": [
             {
@@ -1179,12 +1241,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "c",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "c"
           },
           "to": [
             {
@@ -1208,12 +1265,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "d",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "d"
           },
           "to": [
             {
@@ -1237,12 +1289,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "e",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "e"
           },
           "to": [
             {
@@ -1266,12 +1313,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "f",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "f"
           },
           "to": [
             {
@@ -1295,12 +1337,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "g",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "g"
           },
           "to": [
             {
@@ -1324,12 +1361,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "h",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "h"
           },
           "to": [
             {
@@ -1353,12 +1385,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "i",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "i"
           },
           "to": [
             {
@@ -1382,12 +1409,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "j",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "j"
           },
           "to": [
             {
@@ -1411,12 +1433,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "k",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "k"
           },
           "to": [
             {
@@ -1440,12 +1457,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "l",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "l"
           },
           "to": [
             {
@@ -1469,12 +1481,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "m",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "m"
           },
           "to": [
             {
@@ -1498,12 +1505,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "n",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "n"
           },
           "to": [
             {
@@ -1527,12 +1529,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "o",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "o"
           },
           "to": [
             {
@@ -1556,12 +1553,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "p",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "p"
           },
           "to": [
             {
@@ -1585,12 +1577,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "q",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "q"
           },
           "to": [
             {
@@ -1614,12 +1601,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "r",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "r"
           },
           "to": [
             {
@@ -1643,12 +1625,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "s",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "s"
           },
           "to": [
             {
@@ -1672,12 +1649,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "t",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "t"
           },
           "to": [
             {
@@ -1701,12 +1673,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "u",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "u"
           },
           "to": [
             {
@@ -1730,12 +1697,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "v",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "v"
           },
           "to": [
             {
@@ -1759,12 +1721,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "w",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "w"
           },
           "to": [
             {
@@ -1788,12 +1745,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "x",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "x"
           },
           "to": [
             {
@@ -1817,12 +1769,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "y",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "y"
           },
           "to": [
             {
@@ -1846,12 +1793,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "z",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "z"
           },
           "to": [
             {
@@ -1875,12 +1817,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "0",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "0"
           },
           "to": [
             {
@@ -1904,12 +1841,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "1",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "1"
           },
           "to": [
             {
@@ -1933,12 +1865,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "2",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "2"
           },
           "to": [
             {
@@ -1962,12 +1889,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "3",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "3"
           },
           "to": [
             {
@@ -1991,12 +1913,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "4",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "4"
           },
           "to": [
             {
@@ -2020,12 +1937,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "5",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "5"
           },
           "to": [
             {
@@ -2049,12 +1961,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "6",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "6"
           },
           "to": [
             {
@@ -2078,12 +1985,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "7",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "7"
           },
           "to": [
             {
@@ -2107,12 +2009,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "8",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "8"
           },
           "to": [
             {
@@ -2136,12 +2033,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "9",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "9"
           },
           "to": [
             {
@@ -2165,12 +2057,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "spacebar",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "spacebar"
           },
           "to": [
             {
@@ -2194,12 +2081,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "semicolon"
           },
           "to": [
             {
@@ -2223,12 +2105,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "period",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "period"
           },
           "to": [
             {
@@ -2252,12 +2129,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "comma",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "comma"
           },
           "to": [
             {
@@ -2281,12 +2153,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "slash",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "slash"
           },
           "to": [
             {
@@ -2310,12 +2177,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "backslash",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "backslash"
           },
           "to": [
             {
@@ -2339,12 +2201,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "open_bracket",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "open_bracket"
           },
           "to": [
             {
@@ -2368,12 +2225,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "close_bracket",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "close_bracket"
           },
           "to": [
             {
@@ -2397,12 +2249,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "quote"
           },
           "to": [
             {
@@ -2426,12 +2273,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "equal_sign",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "equal_sign"
           },
           "to": [
             {
@@ -2455,12 +2297,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "hyphen",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "hyphen"
           },
           "to": [
             {
@@ -2484,12 +2321,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "escape",
-            "modifiers": {
-              "optional": [
-                "control"
-              ]
-            }
+            "key_code": "escape"
           },
           "to": [
             {
